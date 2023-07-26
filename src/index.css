@@ -9,3 +9,12 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+@font-face {
+  font-family: 'OpenSans-Regular';
+  src: local('OpenSans-Regular'), url(./fonts/OpenSans-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'OpenSans-SemiBold';
+  src: local('OpenSans-SemiBold'), url(./fonts/OpenSans-SemiBold.ttf) format('truetype');
+}

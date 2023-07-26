@@ -1,0 +1,25 @@
+.main-text {
+    color: #393737;
+    font-family: OpenSans-SemiBold;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+.supporting-text {
+    color: #565353;
+    font-family: OpenSans-Regular;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    margin-bottom: 32px;
+}
+
+.button-container {
+    display: flex;
+    column-gap: 12px;
+}
