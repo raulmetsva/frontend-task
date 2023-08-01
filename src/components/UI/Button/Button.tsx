@@ -1,15 +1,13 @@
-import { MouseEventHandler } from 'react';
-
 import styles from './Button.module.css';
 
-interface ButtonProps {
-  onClick: MouseEventHandler<HTMLButtonElement>;
-  text: String;
+type ButtonProps = {
+  onClick: () => void;
+  text: string;
   variant: 'primary' | 'secondary';
-  disabled?: Boolean;
-}
+  disabled?: boolean;
+};
 
-const Button = ({ onClick, text, variant, disabled = false }: ButtonProps) => {
+const Button: React.FC<ButtonProps> = ({ onClick, text, variant, disabled = false }) => {
   return (
     <button
       className={`${styles.button} ${variant === 'primary' ? styles.primary : styles.secondary} ${

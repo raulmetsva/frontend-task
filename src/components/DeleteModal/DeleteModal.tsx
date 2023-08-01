@@ -1,16 +1,11 @@
 import { useState, useEffect } from 'react';
-import { MouseEventHandler } from 'react';
 
 import Modal from '../UI/Modal/Modal';
 import Button from '../UI/Button/Button';
 import AlertIcon from '../../assets/alert.svg';
 import styles from './DeleteModal.module.css';
 
-interface DeleteModalProps {
-  onClose: MouseEventHandler<HTMLButtonElement | HTMLDivElement>;
-}
-
-const DeleteModal = ({ onClose }: DeleteModalProps) => {
+const DeleteModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   const [deleteButtonDisabled, setDeleteButtonDisabled] = useState(true);
 
   useEffect(() => {

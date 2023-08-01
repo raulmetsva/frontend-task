@@ -1,32 +1,20 @@
 import { ReactNode } from 'react';
-import { MouseEventHandler } from 'react';
 import { createPortal } from 'react-dom';
+import React from 'react';
 
 import styles from './Modal.module.css';
 
-interface BackdropProps {
-  onClose: MouseEventHandler<HTMLDivElement>;
-}
-
-interface ModalOverlayProps {
-  children?: ReactNode;
-}
-
-interface ModalProps {
-  children?: ReactNode;
-  onClose: MouseEventHandler<HTMLDivElement>;
-}
-const Backdrop = ({ onClose }: BackdropProps) => {
+const Backdrop: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   return <div className={styles.backdrop} onClick={onClose} />;
 };
 
-const ModalOverlay = ({ children }: ModalOverlayProps) => {
+const ModalOverlay: React.FC<{ children: ReactNode }> = ({ children }) => {
   return <div className={styles.modal}>{children}</div>;
 };
 
 const portalElement = document.getElementById('overlays')!;
 
-const Modal = ({ children, onClose }: ModalProps) => {
+const Modal: React.FC<{ children: ReactNode; onClose: () => void }> = ({ children, onClose }) => {
   return (
     <>
       {createPortal(<Backdrop onClose={onClose} />, portalElement)}
